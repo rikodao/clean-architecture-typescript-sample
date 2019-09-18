@@ -3,16 +3,20 @@ import { Request, Response, Router } from 'express';
 import { BAD_REQUEST, CREATED, OK } from 'http-status-codes';
 import { paramMissingError } from '@shared';
 import { ParamsDictionary } from 'express-serve-static-core';
-import { UserController } from 'src/contorollers/User/UserController';
-import { UserUsecase } from 'src/Usecases/User/UserUsecase';
+import { UserRestController } from 'src/contorollers/User/UserRestController';
+import { UserUsecase } from 'src/usecases/user/UserUsecase';
 import { UserEntity, IUser } from 'src/entities/User/UserEntity';
+import {UserOnMemoryRepository} from "../repositories/user/UserOnMemoryRepository";
+import {UserJdbcRepository} from "../repositories/user/UserJdbcRepository";
 
 // Init shared
 const router = Router();
 const eserEntity = new UserEntity({} as IUser); // バケツリレーつらくね?
-const userUsecase = new UserUsecase(eserEntity);
 
-const userController = new UserController(userUsecase);
+// const userRepository = new UserOnMemoryRepository();
+const userRepository = new UserJdbcRepository();
+const userUsecase = new UserUsecase(userRepository);
+const userController = new UserRestController(userUsecase);
 
 /******************************************************************************
  *                      Get All Users - "GET /api/users/all"

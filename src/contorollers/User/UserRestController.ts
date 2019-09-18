@@ -2,7 +2,7 @@ import { logger } from '@shared';
 import { IUser } from 'src/entities/User/UserEntity';
 import { Ripository } from 'src/repositories//Repository';
 import { Request, Response, Router } from 'express';
-import { IUserUsecase } from 'src/Usecases/User/UserUsecase';
+import { IUserUsecase } from 'src/usecases/user/UserUsecase';
 import { Contoroller } from 'src/contorollers/Contorollers';
 import { BAD_REQUEST, CREATED, OK } from 'http-status-codes';
 import { paramMissingError } from '@shared';
@@ -17,7 +17,7 @@ export interface IUserController {
     delete(req: Request, res: Response): void;
 }
 
-export class UserController extends Contoroller implements IUserController {
+export class UserRestController extends Contoroller implements IUserController {
     userUsecase: IUserUsecase;
 
     constructor(userUsecase: IUserUsecase) {

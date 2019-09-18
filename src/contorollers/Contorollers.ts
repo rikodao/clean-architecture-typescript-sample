@@ -1,4 +1,4 @@
-import { IUsecase } from 'src/Usecases';
+import { IUsecase } from 'src/usecases';
 import { logger } from '@shared';
 import { IUser } from 'src/entities/User/UserEntity';
 import { Ripository } from 'src/repositories//Repository';
