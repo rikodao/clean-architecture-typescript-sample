@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import app from './express/Server';
 import { logger } from '@shared';
 
