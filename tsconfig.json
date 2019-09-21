@@ -14,19 +14,19 @@
     "moduleResolution": "node",
     "paths": {
       "@repositories": [
-        "src/repositories"
+        "src/services/repositories"
       ],
       "@entities": [
-        "src/entities"
+        "src/services/entities"
       ],
       "@shared": [
         "src/shared"
       ],
       "@contorollers": [
-        "src/contorollers"
+        "src/services/contorollers"
       ],
       "@usecases": [
-        "src/usecases"
+        "src/services/usecases"
       ],
       "@ripositories": [
         "src/ripositories"

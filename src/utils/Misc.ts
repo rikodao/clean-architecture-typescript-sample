@@ -1,4 +1,4 @@
-import { logger } from '@shared/Logger';
+import { logger } from '@shared';
 
 export const paramMissingError = 'One or more of the required parameters was missing.';
 
