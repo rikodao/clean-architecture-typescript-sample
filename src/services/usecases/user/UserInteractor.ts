@@ -1,7 +1,8 @@
-import { UserEntity } from 'src/services/entities/User/UserEntity';
-import { IUserRepository } from "../adapters/repositories/IUserRepository";
-import { IUserPresenter } from "../adapters/presenters/IUserPresenter";
-export interface UserEntityUsecase {
+import { UserEntity } from '../../entities/User/UserEntity';
+import { IUserRepository } from "@usecases/adapters/repositories/IUserRepository";
+import { IUserPresenter } from "@usecases//adapters/presenters/IUserPresenter";
+import { injectable, inject } from "tsyringe";
+export interface IUserUsecase {
     createNewUser(name: string, email: string): void;
     getAllUsers(): void;
     updateUser(id: number, name: string, email: string): void;
@@ -13,13 +14,13 @@ export interface UserEntityUsecase {
  * 2. Repositoryなどを使ってEntityを操作して
  * 3. OuputPortに結果を出力する
  */
-export class UserInteractor implements UserEntityUsecase {
 
-
-    private readonly userRepository: IUserRepository
-    private readonly outputPort: IUserPresenter;
-
-    constructor(userRepository: IUserRepository, outputPort: IUserPresenter) {
+@injectable()
+export class UserInteractor implements IUserUsecase {
+    constructor(
+        @inject("IUserRepository") private readonly userRepository: IUserRepository,
+        @inject("IUserPresenter") private readonly outputPort: IUserPresenter
+    ) {
         this.userRepository = userRepository;
         this.outputPort = outputPort;
     }

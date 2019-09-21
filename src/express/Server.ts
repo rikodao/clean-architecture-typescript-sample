@@ -1,8 +1,8 @@
 import cookieParser from 'cookie-parser';
 import express from 'express';
 import logger from 'morgan';
-import BaseRouter from 'src/express/routers/index';
-
+import BaseRouter from './routers/index';
+import "reflect-metadata";
 const app = express();
 
 app.use(logger('dev'));

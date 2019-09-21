@@ -1,5 +1,5 @@
-import { IUserRepository } from "../../usecases/adapters/repositories/IUserRepository";
-import { UserEntity } from "src/services/entities/User/UserEntity";
+import { IUserRepository } from "@usecases/adapters/repositories/IUserRepository";
+import { UserEntity } from "@entities/User/UserEntity";
 
 export class UserJdbcRepository implements IUserRepository {
     constructor() {

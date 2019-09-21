@@ -1,19 +1,18 @@
-import { IUserRouter } from '../adapters/routers/IUserRouter';
-import { UserEntityUsecase } from 'src/services/usecases/user/UserInteractor';
+import { IUserRouter } from '@contorollers/adapters/routers/IUserRouter';
+import { IUserUsecase } from '@usecases/user/UserInteractor';
+import {injectable, inject} from "tsyringe";
 
 
 export interface UserController {
-    userUsecase: UserEntityUsecase;
     get(req: IUserRouter): void;
     post(req: IUserRouter): void;
     put(req: IUserRouter): void;
     delete(req: IUserRouter): void;
 }
 
+@injectable()
 export class UserRestController implements UserController {
-    userUsecase: UserEntityUsecase;
-
-    constructor(userUsecase: UserEntityUsecase) {
+    constructor(@inject("IUserUsecase") private userUsecase: IUserUsecase) {
         this.userUsecase = userUsecase;
     }
 

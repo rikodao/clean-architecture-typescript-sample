@@ -1,4 +1,4 @@
-import { UserEntity } from "src/services/entities/User/UserEntity";
+import { UserEntity } from "@entities/User/UserEntity";
 
 export interface IUserRouter {
     body: UserEntity;

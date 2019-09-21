@@ -1,5 +1,7 @@
-import app from 'src/express/Server';
+import "reflect-metadata";
+import app from './express/Server';
 import { logger } from '@shared';
+
 
 const port = Number(process.env.PORT || 3000);
 app.listen(port, () => {

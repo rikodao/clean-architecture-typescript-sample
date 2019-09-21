@@ -1,6 +1,8 @@
 import { IUserRepository } from "../../usecases/adapters/repositories/IUserRepository";
 import { UserEntity } from "src/services/entities/User/UserEntity";
+import { injectable } from "tsyringe";
 
+@injectable()
 export class UserOnMemoryRepository implements IUserRepository {
     protected users: UserEntity[];
     constructor() {

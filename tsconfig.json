@@ -13,27 +13,36 @@
     "target": "es6",
     "moduleResolution": "node",
     "paths": {
-      "@repositories": [
-        "src/services/repositories"
+      "@repositories/*": [
+        "src/services/repositories/*"
       ],
-      "@entities": [
-        "src/services/entities"
+      "@entities/*": [
+        "src/services/entities/*"
       ],
       "@shared": [
         "src/shared"
       ],
-      "@contorollers": [
-        "src/services/contorollers"
+      "@contorollers/*": [
+        "src/services/contorollers/*"
       ],
-      "@usecases": [
-        "src/services/usecases"
+      "@presenters/*": [
+        "src/services/presenters/*"
       ],
-      "@ripositories": [
-        "src/ripositories"
+      "@usecases/*": [
+        "src/services/usecases/*"
+      ],
+      "@express/*": [
+        "src/express/*"
       ],
       "@server": [
-        "src/Server"
-      ]
+        "src/express/Server"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@/*": [
+        "src/*"
+      ],
     },
     "types": [
       "node"
