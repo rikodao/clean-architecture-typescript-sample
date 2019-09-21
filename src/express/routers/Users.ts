@@ -5,7 +5,7 @@ import { UserEntity } from 'src/services/entities/User/UserEntity';
 import express = require('express');
 import { userListEvent } from '../../services/presenters/UserJsonEmitPresenter';
 import { IUserRouter } from '../../services/contorollers/adapters/routers/IUserRouter';
-import { userRestController } from '../../services/initialize';
+import { userRestController } from '../../services/diContainer';
 const userController = userRestController;
 
 // Init shared
