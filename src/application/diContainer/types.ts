@@ -1,5 +1,9 @@
 const TYPES = {
-    UserRepository: Symbol.for("UserRepository"),
+    User: {
+        Repository: Symbol.for("UserRepository"),
+        Presentator: Symbol.for("UserPresentator"),
+        Intaractor: Symbol.for("UserIntaractor"),
+    }
 };
 
 export { TYPES };

@@ -1,14 +1,14 @@
-export default class UserJsonPresentator {
-    private _data: { id: string, name: string, age: number } | { id: string, name: string, age: number }[];
-    constructor(data: { id: string, name: string, age: number } | { id: string, name: string, age: number }[]) {
-        this._data = data
+import IUserPresentator from "../usecace/interface/presentator/IUserPresentator";
+import { injectable } from "inversify";
+import "reflect-metadata";
 
-    }
-    serialize(): any {
-        if (this._data instanceof Array) {
-            return this._data.map(this._serializeSingleUser)
+@injectable()
+export default class UserJsonPresentator implements IUserPresentator {
+    serialize(params: { id: string, name: string, age: number } | { id: string, name: string, age: number }[]): { name: string, age: number } | { name: string, age: number }[] {
+        if (params instanceof Array) {
+            return params.map(this._serializeSingleUser)
         }
-        return this._serializeSingleUser(this._data)
+        return this._serializeSingleUser(params)
     }
 
     private _serializeSingleUser = (params: { id: string, name: string, age: number }): { name: string, age: number } => {

@@ -1,9 +1,10 @@
 import User from "../domain/entity/user/userEntity";
+import IUserRepository from "../usecace/interface/repository/IUserRepository";
 import { injectable } from "inversify";
 import "reflect-metadata";
 
 @injectable()
-export default class userRepository {
+export default class userRepository implements IUserRepository {
     constructor() {
     }
     getUser(): User {
