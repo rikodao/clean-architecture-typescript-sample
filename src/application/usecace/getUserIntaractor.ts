@@ -10,8 +10,8 @@ export default class GetUserIntaractor {
         @inject(TYPES.User.Repository) private _userRepository: IUserRepository,
     ) { }
 
-    handle(): { id: string, name: string, age: number } {
-        const user = this._userRepository.getUser()
+    async handle(): Promise<{ id: string, name: string, age: number }> {
+        const user = await this._userRepository.getUser()
         return user.value
 
     }

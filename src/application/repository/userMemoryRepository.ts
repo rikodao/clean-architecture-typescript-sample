@@ -4,10 +4,11 @@ import { injectable } from "inversify";
 import "reflect-metadata";
 
 @injectable()
-export default class userRepository implements IUserRepository {
+export default class UserRepository implements IUserRepository {
+
     constructor() {
     }
-    getUser(): User {
+    async getUser(): Promise<User> {
         const user = new User({ age: 18, first: "hoge", family: "fuga" })
         console.log("userRepository new 値", user);
 

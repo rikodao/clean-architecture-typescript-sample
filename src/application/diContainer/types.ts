@@ -3,6 +3,9 @@ const TYPES = {
         Repository: Symbol.for("UserRepository"),
         Presentator: Symbol.for("UserPresentator"),
         Intaractor: Symbol.for("UserIntaractor"),
+    },
+    Db: {
+        DBClient: Symbol.for("DBClient"),
     }
 };
 

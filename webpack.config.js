@@ -1,5 +1,6 @@
 const path = require('path');
 const nodeExternals = require("webpack-node-externals");
+const Dotenv = require('dotenv-webpack');
 module.exports = {
     // モジュールバンドルを行う起点となるファイルの指定
     // 指定できる値としては、ファイル名の文字列や、それを並べた配列やオブジェクト
@@ -36,5 +37,9 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        // { systemvars: true },
+        new Dotenv({ systemvars: true }),
+    ],
 }
