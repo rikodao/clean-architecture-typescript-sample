@@ -1,4 +1,4 @@
-import IUserPresentator from "../usecace/interface/presentator/IUserPresentator";
+import IUserPresentator from "../adaper/presentator/IUserPresentator";
 import { injectable } from "inversify";
 import "reflect-metadata";
 

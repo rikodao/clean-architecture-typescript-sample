@@ -1,10 +1,10 @@
 import { Container } from "inversify";
 import { TYPES } from "./types";
 import UserMemoryRepository from "../repository/userMemoryRepository"
-import IUserRepository from "../usecace/interface/repository/IUserRepository"
+import IUserRepository from "../adaper/repository/IUserRepository"
 import UserJsonPresentator from "../presentator/userJsonPresentator"
-import IUserPresentator from "../usecace/interface/presentator/IUserPresentator"
-import IDBClient from "../usecace/interface/repository/IDBClient";
+import IUserPresentator from "../adaper/presentator/IUserPresentator"
+import IDBClient from "../adaper/repository/IDBClient";
 import MysqlClient from "../../infrastracture/database/mysqlClient";
 import UserMySQLRepository from "../repository/userMySQLRepository";
 

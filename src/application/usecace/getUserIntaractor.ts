@@ -1,5 +1,5 @@
-import IUserRepository from "../usecace/interface/repository/IUserRepository"
-import IUserPresentator from "../usecace/interface/presentator/IUserPresentator"
+import IUserRepository from "../adaper/repository/IUserRepository"
+import IUserPresentator from "../adaper/presentator/IUserPresentator"
 import { TYPES } from "../diContainer/types";
 import { injectable, inject } from "inversify";
 import "reflect-metadata";
