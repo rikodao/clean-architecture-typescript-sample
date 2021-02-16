@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --watch",
     "build-dev": "webpack --mode=development",
     "start": "npm run build-dev && node dist/bundle.js"
   },

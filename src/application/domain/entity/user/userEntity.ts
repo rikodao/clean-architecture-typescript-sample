@@ -4,13 +4,15 @@ import Name from "./value/userNameValue";
 import { stringify } from "uuid";
 export default class UserEntity {
     private _id: Id
-    private _name: Name
+    private _familyName: Name
+    private _firstName: Name
     private _age: Age
 
 
-    constructor(params: { family: string, first: string, age: number }) {
+    constructor(params: { familyName: string, firstName: string, age: number }) {
         try {
-            this.name = params
+            this.familyName = params.familyName
+            this.firstName = params.firstName
             this.age = params.age
         } catch (error) {
             throw error
@@ -18,7 +20,7 @@ export default class UserEntity {
         this._id = new Id()
     }
 
-    set age(age: number) {
+    private set age(age: number) {
         try {
             this._age = new Age(age)
         } catch (error) {
@@ -26,15 +28,23 @@ export default class UserEntity {
         }
     }
 
-    set name(params: { first: string, family: string }) {
+    private set firstName(firstName: string) {
         try {
-            this._name = new Name(params)
+            this._firstName = new Name(firstName)
         } catch (error) {
             throw error
         }
     }
 
-    get value(): { id: string, name: string, age: number } {
-        return { id: this._id.value, name: this._name.value, age: this._age.value }
+    private set familyName(familyName: string) {
+        try {
+            this._familyName = new Name(familyName)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    get value(): { id: string, firstName: string, familyName: string, age: number } {
+        return { id: this._id.value, firstName: this._firstName.value, familyName: this._familyName.value, age: this._age.value }
     }
 }
