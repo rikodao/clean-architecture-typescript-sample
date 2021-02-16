@@ -1,17 +1,18 @@
 import IUserPresentator from "../adaper/presentator/IUserPresentator";
 import { injectable } from "inversify";
 import "reflect-metadata";
+import { UserData, UserOutputData } from "../types";
 
 @injectable()
 export default class UserJsonPresentator implements IUserPresentator {
-    serialize(params: { id: string, firstName: string, familyName: string, age: number } | { id: string, firstName: string, familyName: string, age: number }[]): { name: string, age: number } | { name: string, age: number }[] {
+    serialize(params: UserData | UserData[]): UserOutputData | UserOutputData[] {
         if (params instanceof Array) {
             return params.map(this._serializeSingleUser)
         }
         return this._serializeSingleUser(params)
     }
 
-    private _serializeSingleUser = (params: { id: string, firstName: string, familyName: string, age: number }): { name: string, age: number } => {
+    private _serializeSingleUser = (params: UserData): UserOutputData => {
         return {
             name: params.familyName + params.firstName,
             age: params.age

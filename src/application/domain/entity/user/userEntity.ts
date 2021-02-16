@@ -2,6 +2,7 @@ import Id from "./value/userIdValue";
 import Age from "./value/userAgeValue";
 import Name from "./value/userNameValue";
 import { stringify } from "uuid";
+import { UserData } from "../../../types";
 export default class UserEntity {
     private _id: Id
     private _familyName: Name
@@ -44,7 +45,7 @@ export default class UserEntity {
         }
     }
 
-    get value(): { id: string, firstName: string, familyName: string, age: number } {
+    get value(): UserData {
         return { id: this._id.value, firstName: this._firstName.value, familyName: this._familyName.value, age: this._age.value }
     }
 }
