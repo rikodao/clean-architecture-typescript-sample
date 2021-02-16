@@ -1,7 +1,7 @@
 import mysql from 'mysql'
 import dotenv from 'dotenv'
 import util from 'util'
-import IDBConnection from '../../application/usecace/interface/repository/IDBClient'
+import IDBConnection from '../../../application/adaper/repository/IDBClient'
 import { injectable } from 'inversify'
 dotenv.config()
 

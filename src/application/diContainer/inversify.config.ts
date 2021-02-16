@@ -5,7 +5,7 @@ import IUserRepository from "../adaper/repository/IUserRepository"
 import UserJsonPresentator from "../presentator/userJsonPresentator"
 import IUserPresentator from "../adaper/presentator/IUserPresentator"
 import IDBClient from "../adaper/repository/IDBClient";
-import MysqlClient from "../../infrastracture/database/mysqlClient";
+import MysqlClient from "../../infrastracture/database/mysql/mysqlClient";
 import UserMySQLRepository from "../repository/userMySQLRepository";
 
 const diContainer = new Container();

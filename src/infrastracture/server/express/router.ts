@@ -1,10 +1,10 @@
 
 import { Router, Request, Response } from 'express';
-import UserController from '../../application/controllers/userJsonController';
-import IUserRepository from '../../application/usecace/interface/repository/IUserRepository';
-import diContainer from "../../application/diContainer/inversify.config";
-import { TYPES } from "../../application/diContainer/types";
-import IUserPresentator from '../../application/usecace/interface/presentator/IUserPresentator';
+import UserController from '../../../application/controllers/userJsonController';
+import IUserRepository from '../../../application/adaper/repository/IUserRepository';
+import diContainer from "../../../application/diContainer/inversify.config";
+import { TYPES } from "../../../application/diContainer/types";
+import IUserPresentator from '../../../application/adaper/presentator/IUserPresentator';
 
 const router = Router();
 

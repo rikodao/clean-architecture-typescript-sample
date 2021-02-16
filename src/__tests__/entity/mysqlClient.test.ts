@@ -1,4 +1,4 @@
-import MysqlClient from '../../infrastracture/database/mysqlClient'
+import MysqlClient from '../../infrastracture/database/mysql/mysqlClient'
 test('initialize MysqlClient', async () => {
   const dbClient = new MysqlClient()
   let result = await dbClient.execute("select 1;")
