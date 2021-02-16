@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { responsHeader } from './middleware/responsHeader'
+import { responsHeader } from '~/infrastracture/server/express/middleware/responsHeader'
 
 import BaseRouter from './router'
 const app: express.Express = express()

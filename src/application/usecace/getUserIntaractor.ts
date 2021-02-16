@@ -1,9 +1,9 @@
-import IUserRepository from "../adaper/repository/IUserRepository"
-import IUserPresentator from "../adaper/presentator/IUserPresentator"
-import { TYPES } from "../diContainer/types";
+import IUserRepository from "~/application/adaper/repository/IUserRepository"
+import IUserPresentator from "~/application/adaper/presentator/IUserPresentator"
+import { TYPES } from "~/application/diContainer/types";
 import { injectable, inject } from "inversify";
 import "reflect-metadata";
-import { UserData } from "../types";
+import { UserData } from "~/application/types";
 
 @injectable()
 export default class GetUserIntaractor {

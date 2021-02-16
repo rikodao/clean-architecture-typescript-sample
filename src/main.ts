@@ -1,4 +1,4 @@
-import app from './infrastracture/server/express/app';
+import app from '~/infrastracture/server/express/app';
 import * as http from 'http';
 import { debug } from 'debug';
 

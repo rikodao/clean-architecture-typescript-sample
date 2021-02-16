@@ -1,12 +1,12 @@
 import { Container } from "inversify";
 import { TYPES } from "./types";
-import UserMemoryRepository from "../repository/userMemoryRepository"
-import IUserRepository from "../adaper/repository/IUserRepository"
-import UserJsonPresentator from "../presentator/userJsonPresentator"
-import IUserPresentator from "../adaper/presentator/IUserPresentator"
-import IDBClient from "../adaper/repository/IDBClient";
-import MysqlClient from "../../infrastracture/database/mysql/mysqlClient";
-import UserMySQLRepository from "../repository/userMySQLRepository";
+import UserMemoryRepository from "~/application/repository/userMemoryRepository"
+import IUserRepository from "~/application/adaper/repository/IUserRepository"
+import UserJsonPresentator from "~/application/presentator/userJsonPresentator"
+import IUserPresentator from "~/application/adaper/presentator/IUserPresentator"
+import IDBClient from "~/application/adaper/repository/IDBClient";
+import MysqlClient from "~/infrastracture/database/mysql/mysqlClient";
+import UserMySQLRepository from "~/application/repository/userMySQLRepository";
 
 const diContainer = new Container();
 diContainer.bind<IUserRepository>(TYPES.User.Repository).to(UserMySQLRepository);

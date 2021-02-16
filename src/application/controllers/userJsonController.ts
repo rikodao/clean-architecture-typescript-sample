@@ -1,8 +1,8 @@
-import IUserRepository from "../adaper/repository/IUserRepository"
-import IUserPresentator from "../adaper/presentator/IUserPresentator"
+import IUserRepository from "~/application/adaper/repository/IUserRepository"
+import IUserPresentator from "~/application/adaper/presentator/IUserPresentator"
 
-import GetUserIntaractor from "../usecace/getUserIntaractor"
-import { TYPES } from "../diContainer/types";
+import GetUserIntaractor from "~/application/usecace/getUserIntaractor"
+import { TYPES } from "~/application/diContainer/types";
 import { injectable, inject } from "inversify";
 import "reflect-metadata";
 

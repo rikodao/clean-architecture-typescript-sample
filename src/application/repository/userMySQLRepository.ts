@@ -1,9 +1,9 @@
-import User from "../domain/entity/user/userEntity";
-import IUserRepository from "../adaper/repository/IUserRepository";
+import User from "~/application/domain/entity/user/userEntity";
+import IUserRepository from "~/application/adaper/repository/IUserRepository";
 import { inject, injectable } from "inversify";
 import "reflect-metadata";
-import IDBClient from "../adaper/repository/IDBClient";
-import { TYPES } from "../diContainer/types";
+import IDBClient from "~/application/adaper/repository/IDBClient";
+import { TYPES } from "~/application/diContainer/types";
 
 @injectable()
 export default class UserMySQLRepository implements IUserRepository {

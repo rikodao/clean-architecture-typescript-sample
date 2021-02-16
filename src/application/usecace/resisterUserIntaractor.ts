@@ -1,4 +1,4 @@
-import storeResisterService from "../domain/service/storeResisterService";
+import storeResisterService from "~/application/domain/service/storeResisterService";
 export default class resisterUserIntaractor {
     _resister: storeResisterService
     constructor(resister: storeResisterService) {
