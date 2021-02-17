@@ -1,7 +1,7 @@
 import IUserPresentator from "~/application/adaper/presentator/IUserPresentator";
 import { injectable } from "inversify";
 import "reflect-metadata";
-import { UserData, UserOutputData } from "~/application/types";
+import { UserData, UserOutputData } from "~/application/types/user";
 
 @injectable()
 export default class UserJsonPresentator implements IUserPresentator {

@@ -3,7 +3,7 @@ import IUserPresentator from "~/application/adaper/presentator/IUserPresentator"
 import { TYPES } from "~/application/diContainer/types";
 import { injectable, inject } from "inversify";
 import "reflect-metadata";
-import { UserOutputData } from "~/application/types";
+import { UserOutputData } from "~/application/types/user";
 
 @injectable()
 export default class GetUserIntaractor {

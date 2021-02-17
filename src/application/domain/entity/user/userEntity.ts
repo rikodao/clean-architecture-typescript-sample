@@ -2,7 +2,7 @@ import Id from "./value/userIdValue";
 import Age from "./value/userAgeValue";
 import Name from "./value/userNameValue";
 import { stringify } from "uuid";
-import { UserData } from "../../../types";
+import { UserData } from "../../../types/user";
 export default class UserEntity {
     private _id: Id
     private _familyName: Name
