@@ -3,17 +3,18 @@ import IUserPresentator from "~/application/adaper/presentator/IUserPresentator"
 import { TYPES } from "~/application/diContainer/types";
 import { injectable, inject } from "inversify";
 import "reflect-metadata";
-import { UserData } from "~/application/types";
+import { UserOutputData } from "~/application/types";
 
 @injectable()
 export default class GetUserIntaractor {
     constructor(
         @inject(TYPES.User.Repository) private _userRepository: IUserRepository,
+        @inject(TYPES.User.Presentator) private _userPresentator: IUserPresentator
     ) { }
 
-    async handle(): Promise<UserData> {
+    async handle(): Promise<UserOutputData> {
         const user = await this._userRepository.getUser()
-        return user.value
+        return this._userPresentator.serialize(user.value)
 
     }
 }

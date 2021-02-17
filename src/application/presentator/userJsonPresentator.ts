@@ -5,7 +5,10 @@ import { UserData, UserOutputData } from "~/application/types";
 
 @injectable()
 export default class UserJsonPresentator implements IUserPresentator {
-    serialize(params: UserData | UserData[]): UserOutputData | UserOutputData[] {
+    // TS のオーバーロードの書き方
+    serialize(params: UserData): UserOutputData;
+    serialize(params: UserData[]): UserOutputData[];
+    serialize(params: any): any {
         if (params instanceof Array) {
             return params.map(this._serializeSingleUser)
         }

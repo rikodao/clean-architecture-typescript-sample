@@ -1,5 +1,6 @@
 import { UserData, UserOutputData } from "../../types";
 
 export default interface IUserPresentator {
-    serialize(params: UserData | UserData[]): UserOutputData | UserOutputData[];
+    serialize(params: UserData): UserOutputData;
+    serialize(params: UserData[]): UserOutputData[];
 }

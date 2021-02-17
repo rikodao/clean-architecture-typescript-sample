@@ -13,8 +13,8 @@ export default class UserJsonController {
         @inject(TYPES.User.Presentator) private _userPresentator: IUserPresentator
     ) { }
     async getUser(req: any, res: any): Promise<any> {
-        const useCase = new GetUserIntaractor(this._userRepository)
+        const useCase = new GetUserIntaractor(this._userRepository, this._userPresentator)
         const result = await useCase.handle()
-        return this._userPresentator.serialize(result)
+        return result
     }
 };
