@@ -1,0 +1,10 @@
+image:
+  name: docker.io/library/nginx-express
+  tag: latest
+
+cloudSqlProxy:
+  connectionName: nomura-market-secure-data-dev:asia-northeast1:secure-data-dev
+  credentialFilePath: /secrets/cloudsql
+  credentialFileName: credentials.json
+
+  

@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app
+  name: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+          imagePullPolicy: Never
+          name: app
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: username
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: password
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: dbname
+          resources:
+            requests:
+              memory: 300Mi
+              cpu: 300m
+            limits:
+              memory: 300Mi
+              cpu: 300m
+        - image: gcr.io/cloudsql-docker/gce-proxy:1.16
+          name: proxy
+          command:
+            [
+              "/cloud_sql_proxy",
+              "-instances={{ .Values.cloudSqlProxy.connectionName }}:=tcp:3306",
+              "-credential_file={{ .Values.cloudSqlProxy.credentialFilePath }}/{{ .Values.cloudSqlProxy.credentialFileName }}",
+            ]
+          volumeMounts:
+            - name: my-secrets-volume
+              mountPath: {{ .Values.cloudSqlProxy.credentialFilePath }}
+              readOnly: true
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 100m
+            limits:
+              memory: 100Mi
+              cpu: 100m
+      volumes:
+        - name: my-secrets-volume
+          secret:
+            secretName: cloudsql-instance-credentials
