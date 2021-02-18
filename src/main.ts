@@ -87,6 +87,7 @@ function onListening(): void {
         if ('port' in addr) {
             return 'port ' + addr.port;
         }
+        return
     }
 
     debug('Listening on ' + bind());

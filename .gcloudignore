@@ -1,5 +1,5 @@
 node_modules
-dist
+build
 kubernetes/templates/secret.yaml
 key
 .env

@@ -10,7 +10,11 @@
     "build-dev": "webpack --mode=development",
     "start": "npm run build-dev && npm run development",
     "development": "NODE_ENV=development node dist/bundle.js",
-    "production": "NODE_ENV=production node dist/bundle.js"
+    "production": "NODE_ENV=production node dist/bundle.js",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "posttest": "npm run lint"
   },
   "keywords": [],
   "author": "",
@@ -35,13 +39,15 @@
     "@types/jest": "^26.0.20",
     "@types/mysql": "^2.15.17",
     "@types/uuid": "^8.3.0",
+    "gts": "^3.1.0",
     "jest": "^26.6.3",
     "terser-webpack-plugin": "^5.1.1",
     "ts-jest": "^26.5.1",
     "ts-loader": "^8.0.15",
-    "typescript": "^4.1.5",
+    "typescript": "^4.0.3",
     "webpack": "^5.21.0",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "@types/node": "^14.11.2"
   }
 }
