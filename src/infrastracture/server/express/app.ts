@@ -9,5 +9,7 @@ app.use(responsHeader)
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/api', BaseRouter);
-
+app.get('/healthz', (req, res) => {
+    res.send('OK');
+});
 export default app;
