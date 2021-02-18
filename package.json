@@ -6,8 +6,11 @@
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
+    "build": "webpack --mode=production",
     "build-dev": "webpack --mode=development",
-    "start": "npm run build-dev && node dist/bundle.js"
+    "start": "npm run build-dev && npm run development",
+    "development": "NODE_ENV=development node dist/bundle.js",
+    "production": "NODE_ENV=production node dist/bundle.js"
   },
   "keywords": [],
   "author": "",
