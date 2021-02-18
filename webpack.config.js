@@ -1,3 +1,4 @@
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 const nodeExternals = require("webpack-node-externals");
 const Dotenv = require('dotenv-webpack');
@@ -45,4 +46,9 @@ module.exports = {
         // { systemvars: true },
         new Dotenv({ systemvars: true }),
     ],
+    optimization: {
+        // セキュリティ目的で、本番Build後のファイルの可視性を下げる。
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
 }
