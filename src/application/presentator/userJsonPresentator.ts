@@ -17,7 +17,7 @@ export default class UserJsonPresentator implements IUserPresentator {
 
     private _serializeSingleUser = (params: UserData): UserOutputData => {
         return {
-            name: params.familyName + params.firstName,
+            name: `${params.familyName} ${params.firstName}`,
             age: params.age
         }
     }
