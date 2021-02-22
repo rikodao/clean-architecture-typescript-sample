@@ -1,4 +1,4 @@
-import IUserPresentator from "~/application/adaper/presentator/IUserPresentator";
+import IUserPresentator from "~/application/adaper/application/presentator/IUserPresentator";
 import { injectable } from "inversify";
 import "reflect-metadata";
 import { UserData, UserOutputData } from "~/application/types/user";

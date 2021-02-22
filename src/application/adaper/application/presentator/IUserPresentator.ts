@@ -1,4 +1,4 @@
-import { UserData, UserOutputData } from "../../types/user";
+import { UserData, UserOutputData } from "../../../types/user";
 
 export default interface IUserPresentator {
     serialize(params: UserData): UserOutputData;

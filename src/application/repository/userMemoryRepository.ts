@@ -1,5 +1,5 @@
 import User from "~/application/domain/entity/user/userEntity";
-import IUserRepository from "~/application/adaper/repository/IUserRepository";
+import IUserRepository from "~/application/adaper/application/repository/IUserRepository";
 import { injectable } from "inversify";
 import "reflect-metadata";
 

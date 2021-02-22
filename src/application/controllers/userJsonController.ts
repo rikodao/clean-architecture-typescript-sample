@@ -1,5 +1,5 @@
-import IUserRepository from "~/application/adaper/repository/IUserRepository"
-import IUserPresentator from "~/application/adaper/presentator/IUserPresentator"
+import IUserRepository from "~/application/adaper/application/repository/IUserRepository";
+import IUserPresentator from "~/application/adaper/application/presentator/IUserPresentator";
 
 import GetUserIntaractor from "~/application/usecace/getUserIntaractor"
 import { TYPES } from "~/application/diContainer/types";

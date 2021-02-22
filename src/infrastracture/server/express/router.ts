@@ -1,10 +1,10 @@
 
 import { Router, Request, Response } from 'express';
 import UserController from '~/application/controllers/userJsonController';
-import IUserRepository from '~/application/adaper/repository/IUserRepository';
+import IUserRepository from '~/application/adaper/application/repository/IUserRepository';
 import diContainer from "~/application/diContainer/inversify.config";
 import { TYPES } from "~/application/diContainer/types";
-import IUserPresentator from '~/application/adaper/presentator/IUserPresentator';
+import IUserPresentator from '~/application/adaper/application/presentator/IUserPresentator';
 
 const router = Router();
 
