@@ -14,8 +14,13 @@ export default class UserMySQLRepository implements IUserRepository {
     this.connection = connection
   }
   async getUser(): Promise<User> {
-    const result = await this.connection.pool.query("show tables")
-    const user = new User({ age: 20, firstName: result[0].Tables_in_nomura_market.substr(0, 12), familyName: result[1].Tables_in_nomura_market.substr(0, 12) })
+    const query = "select * from user limit 1"
+    const result = await this.connection.pool.query(query)
+
+    console.log(result);
+    const userData = result[0]
+
+    const user = new User({ id: userData.id, age: userData.age, firstName: userData.first_name, familyName: userData.family_name })
     return user
   }
 

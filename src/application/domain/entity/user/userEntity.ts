@@ -3,16 +3,11 @@ import Age from "./value/userAgeValue";
 import Name from "./value/userNameValue";
 import { stringify } from "uuid";
 import { UserData } from "../../../types/user";
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-@Entity()
+
 export default class UserEntity {
-  @PrimaryGeneratedColumn()
   private _id: Id
-  @Column()
   private _familyName: Name
-  @Column()
   private _firstName: Name
-  @Column()
   private _age: Age
 
 
