@@ -1,8 +1,5 @@
 export default class storeResisterService {
-    constructor() {
+  constructor() {}
 
-    }
-
-    resisterUser() { }
-
+  resisterUser() {}
 }

@@ -22,7 +22,7 @@ RUN npm install --only=production
 FROM node:alpine
 WORKDIR /app
 # copy compiled artifacts from compile-env
-COPY --from=compile-env --chown=node:node /compile/build /app
+COPY --from=compile-env --chown=node:node /compile/build/bundle.js /app
 # copy production dependencies
 COPY --from=runtime-deps --chown=node:node /build /app
 USER node

@@ -1,6 +1,5 @@
 import app from '~/infrastracture/server/express/app';
 import * as http from 'http';
-import { debug } from 'debug';
 
 /**
  * Get port from environment and store in Express.
@@ -28,19 +27,19 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val: string): number | string | boolean {
-    const nport = parseInt(val, 10);
+  const nport = parseInt(val, 10);
 
-    if (isNaN(nport)) {
-        // named pipe
-        return val;
-    }
+  if (isNaN(nport)) {
+    // named pipe
+    return val;
+  }
 
-    if (nport >= 0) {
-        // port number
-        return nport;
-    }
+  if (nport >= 0) {
+    // port number
+    return nport;
+  }
 
-    return false;
+  return false;
 }
 
 /**
@@ -48,25 +47,23 @@ function normalizePort(val: string): number | string | boolean {
  */
 
 function onError(error: any): void {
-    if (error.syscall !== 'listen') {
-        throw error;
-    }
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
 
-    const bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
+  const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
-    // handle specific listen errors with friendly messages
-    switch (error.code) {
-        case 'EACCES':
-            console.error(bind + ' requires elevated privileges');
-            process.exit(1);
-        case 'EADDRINUSE':
-            console.error(bind + ' is already in use');
-            process.exit(1);
-        default:
-            throw error;
-    }
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      throw error;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      throw error;
+    default:
+      throw error;
+  }
 }
 
 /**
@@ -74,21 +71,20 @@ function onError(error: any): void {
  */
 
 function onListening(): void {
-    function bind() {
-        const addr = server.address();
-        if (addr === null) {
-            return '';
-        }
-
-        if (typeof addr === 'string') {
-            return 'pipe ' + addr;
-        }
-
-        if ('port' in addr) {
-            return 'port ' + addr.port;
-        }
-        return
+  function bind() {
+    const addr = server.address();
+    if (addr === null) {
+      return '';
     }
 
-    debug('Listening on ' + bind());
+    if (typeof addr === 'string') {
+      return 'pipe ' + addr;
+    }
+
+    if ('port' in addr) {
+      return 'port ' + addr.port;
+    }
+    return;
+  }
+  console.error('Listening on ' + bind());
 }

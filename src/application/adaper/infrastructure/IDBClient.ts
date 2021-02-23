@@ -1,3 +1,3 @@
 export default interface IDBClient {
-    execute(query: string, params?: any): any;
+  execute(query: string, params?: any): any;
 }
