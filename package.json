@@ -17,7 +17,8 @@
     "posttest": "npm run lint"
   },
   "pre-commit": [
-    "fix"
+    "fix",
+    "test"
   ],
   "keywords": [],
   "author": "",
