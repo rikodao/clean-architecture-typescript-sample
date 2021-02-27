@@ -8,6 +8,7 @@ import IDBClient from '~/application/adaper/infrastructure/IDBClient';
 import MysqlClient from '~/infrastracture/database/mysql/mysqlClient';
 import UserMySQLRepository from '~/application/repository/userMySQLRepository';
 import TestPresentator from '../presentator/testPresentator';
+import UserFirestoreRepository from '../repository/userFirestoreRepository';
 
 const diContainer = new Container();
 diContainer
